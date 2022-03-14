@@ -11,15 +11,15 @@
 <body>
     <div id="root">
         <div class="add-todo">
-            <input type="text" name="text" id="text-to" placeholder="New Todo">
+            <input @keyup.enter="addTodo" v-model= "newTodo" type="text" name="text" id="text-to" placeholder="New Todo">
     
-            <button class="btn-add">Add Todo</button>
+            <button class="btn-add" @click="addTodo" >Add Todo</button>
         </div>
 
         <ul class="ul-list">
-            <li class="list">
-                <div>Fare i compiti</div>
-                <button class="btn-delete">X</button>
+            <li @click="todoDone" class="list" v-for="(element, index) in todosList">
+                <div>{{ element.name }}</div>
+                <button @click="deleteTodo(index)" class="btn-delete">X</button>
             </li>
         </ul>
 
