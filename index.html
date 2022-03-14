@@ -11,14 +11,14 @@
 <body>
     <div id="root">
         <div class="add-todo">
-            <input @keyup.enter="addTodo" v-model= "newTodo" type="text" name="text" id="text-to" placeholder="New Todo">
+            <input @keyup.enter="addTodo" v-model= "newTodo.text" type="text" name="text" id="text-to" placeholder="Nuovo Todo">
     
             <button class="btn-add" @click="addTodo" >Add Todo</button>
         </div>
 
         <ul class="ul-list">
             <li @click="todoDone" class="list" v-for="(element, index) in todosList">
-                <div>{{ element.name }}</div>
+                <div>{{ element.text }}</div>
                 <button @click="deleteTodo(index)" class="btn-delete">X</button>
             </li>
         </ul>

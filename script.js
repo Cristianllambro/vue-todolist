@@ -1,22 +1,28 @@
 const app = new Vue({
     el: '#root',
     data: {
-        newTodo: '',
-        todosList: 
+        strTodo: '',
+
+        newTodo: {
+            text:'',
+            done: true,
+        },
+
+        todosList:
         [
             {
-                name: 'Studiare javascript',
-                boolean: true,
+                text: 'Studiare javascript',
+                done: false,
             },
             {
-                name: 'Fare esercizio',
-                boolean: true,
+                text: 'Fare esercizio',
+                done: false,
             },
             {
-                name: 'Andare in palestra',
-                boolean: true,
-            },            
-        ]
+                text: 'Andare in palestra',
+                done: false,
+            },
+        ],
     },
     methods: {
         deleteTodo(index) {
@@ -25,13 +31,22 @@ const app = new Vue({
 
         addTodo() {
             if(this.newTodo != '') {
-                this.todosList.name.push(this.newTodo);
-                this.newTodo = '';
+                this.newTodo.text == this.strTodo;
+                this.todosList.push(this.newTodo)
+                this.newTodo = {
+                    text: '',
+                    done: false, 
+                    //sono stato aiutato perche' non ci sarei arrivato da solo! perbacco!
+                }
             }
         },
 
         todoDone() {
-            //funzione per barrare ma non ho idea di come farla
-        }
+            if(todoList.done == 'true'){
+                // sbarrare
+            } else {
+                // togliere barra \ tornare false
+            }
+        },
     }
 });
