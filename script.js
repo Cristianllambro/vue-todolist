@@ -5,7 +5,7 @@ const app = new Vue({
 
         newTodo: {
             text:'',
-            done: true,
+            done: false,
         },
 
         todosList:
@@ -32,20 +32,12 @@ const app = new Vue({
         addTodo() {
             if(this.newTodo != '') {
                 this.newTodo.text == this.strTodo;
-                this.todosList.push(this.newTodo)
+                this.todosList.unshift(this.newTodo)
                 this.newTodo = {
                     text: '',
-                    done: false, 
+                    done: false,
                     //sono stato aiutato perche' non ci sarei arrivato da solo! perbacco!
                 }
-            }
-        },
-
-        todoDone() {
-            if(todoList.done == 'true'){
-                // sbarrare
-            } else {
-                // togliere barra \ tornare false
             }
         },
     }

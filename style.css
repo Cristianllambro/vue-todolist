@@ -60,3 +60,7 @@
     background-color: transparent;
     cursor: pointer;
 }
+
+.list .done{
+    text-decoration: line-through;
+}
