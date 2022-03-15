@@ -11,23 +11,23 @@
 <body>
     <div id="root">
         <div class="add-todo">
-            <input @keyup.enter="addTodo" v-model.trim= "newTodo.text" type="text" name="text" id="text-to" placeholder="Nuovo Todo">
+            <input @keyup.enter="addTodo" v-model= "newTodo.text" type="text" name="text" id="text-to" placeholder="Nuovo Todo">
     
             <button class="btn-add" @click="addTodo">Add Todo</button>
         </div>
 
         <ul class="ul-list">
-            <li @click="todoDone" class="list" v-for="(element, index) in todosList">
+            <li class="list" v-for="(element, index) in todosList">
 
-                <!-- l'ho aggiunto seguendo la lezione, non l'ho fatto da solo (barrare la scritta)-->
-                <div :class="{done: element.done}">{{ element.text }}</div>
+                <!-- l'ho fatto seguendo la lezione al mattino/ non funziona -->
+                <div class="{done: element.done}">{{ element.text }}</div>
                 <button @click="deleteTodo(index)" class="btn-delete">X</button>
             </li>
         </ul>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -32,10 +32,10 @@ const app = new Vue({
         addTodo() {
             if(this.newTodo != '') {
                 this.newTodo.text == this.strTodo;
-                this.todosList.unshift(this.newTodo)
+                this.todosList.push(this.newTodo)
                 this.newTodo = {
                     text: '',
-                    done: false,
+                    done: false, 
                     //sono stato aiutato perche' non ci sarei arrivato da solo! perbacco!
                 }
             }
